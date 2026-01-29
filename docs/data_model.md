@@ -1,2 +1,2 @@
-# data_model
+# Data Model
 (PlaceHolder)
