@@ -1,4 +1,4 @@
-# mvp_scope
+# Mvp scope
 
 This document defines the explicit boundaries of the MVR MVP.
 Anything not listed here is out of scope by default, even if it appears obvious, useful, or easy to add.
