@@ -1,4 +1,4 @@
-# state_action_matrix
+# State action matrix
 
 This document defines which user actions are allowed, blocked, or intercepted by system gates based on the user’s current authoritative state. It is the operational bridge between the conceptual flowchart and future UI/backend enforcement.
 
