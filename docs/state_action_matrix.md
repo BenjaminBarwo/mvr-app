@@ -110,3 +110,6 @@ S5 — Pro — Verified
 	•	A7 Edit profile → ALLOW
 	•	A8 Change role → ROUTE → G1
 	•	A9 Submit verification → NO-OP (already verified)
+	
+	[MVR.Flo.Chart.pdf](https://github.com/user-attachments/files/24950795/MVR.Flo.Chart.pdf)
+
