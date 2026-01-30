@@ -1,2 +1,0 @@
-# verification_contracts
-(placeHolder)
