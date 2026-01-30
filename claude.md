@@ -1,2 +1,0 @@
-# Claude Execution Rules 
-(PlaceHolder)
