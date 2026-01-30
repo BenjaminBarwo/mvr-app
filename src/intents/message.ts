@@ -20,7 +20,12 @@ export type IntentDecision = {
 };
 
 export type UserState =
-  | 'S0' | 'S1' | 'S2' | 'S3' | 'S4' | 'S5';
+  | 'S0' // Unauthenticated
+  | 'S1' // Authenticated (No Role Selected)
+  | 'S2' // Buyer — Unqualified
+  | 'S3' // Buyer — Qualified
+  | 'S4' // Pro — Unverified
+  | 'S5'; // Pro — Verified
 
 export type MessageContext = {
   userId: string;
@@ -40,13 +45,15 @@ export type MessageContext = {
  * - S3 (Buyer qualified) -> ALLOW
  * - S4 (Pro unverified) -> ROUTE -> G3
  * - S5 (Pro verified) -> ALLOW
+ *
+ * Note: This function does NOT send messages or mutate state; it only returns gate decisions.
  */
 export async function handleMessageIntent(ctx: MessageContext): Promise<IntentDecision> {
   if (ctx.userState === 'S0') {
-    return { outcome: 'BLOCK', reason: 'Unauthenticated' };
+    return { outcome: 'BLOCK', reason: 'Unauthenticated: sign in required to message' };
   }
   if (ctx.userState === 'S1') {
-    return { outcome: 'ROUTE', gate: 'G1', reason: 'Role selection required' };
+    return { outcome: 'ROUTE', gate: 'G1', reason: 'Role not selected; route to G1' };
   }
   if (ctx.userState === 'S2') {
     return { outcome: 'ROUTE', gate: 'G2', reason: 'Buyer qualification required' };
